@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}final77 - Blog{% endblock title %}
+{% block content %}
+Blog HomePage
+
+{% for post in posts %}
+<a href="{% url 'blog:post-detail' slug=post.slug %}">
+{{ post.title }}
+{{ post.excerpt|truncatechars:50 }}
+</a>
+{% endfor %}
+
+{% endblock content %}
